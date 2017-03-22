@@ -1,0 +1,35 @@
+body{
+    background: url(../img/pt4.png) no-repeat;
+    background-size: cover;
+}
+
+
+.clock-area {
+    background: #33611E;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    padding-top: 28px;
+}
+.InputBox{
+    margin-top: 75%;
+    padding: 10px;
+    width: 60%;
+    background-color: #366b37;
+    color: #fff;
+    font-size: 20px;
+}
+
+.btn-custom {
+    padding: 12px;
+    background-color: #fff;
+    color: #65C03B;
+    border-color: #65C03B;
+    margin-left: 20px;
+    text-transform: uppercase;
+}
+.btn-custom:hover{
+    background: #65C03B;
+    color: #fff;
+}
+

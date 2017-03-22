@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+       <div class="row">
+        <div class="modal fade click" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm" role="document">
+              <div class="modal-content">
+              <div class="modal-body text-center clock-area">
+              <p id="Clock"></p>
+              </div>
+              </div>
+            </div>
+        </div>
+        </div>
+        <script>
+             function Clck(){
+                 var a=new Date();
+                 var Time=a.toLocaleString();
+                 document.getElementById("Clock").innerHTML=Time;
+
+             };
+
+             setInterval(
+                function(){
+                    Clck();
+                }
+                ,1000);
+             setTimeout(
+                function(){
+                    $('.click').modal('show');
+             },1000);
+        </script>
+    </div>
+       
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+		        <input type="text" class="InputBox" name="text" id="PrimeNumber">
+		        <button type="button" class="btn-custom"  onclick="PrimeNum()">Show Prime</button>
+
+		        <h3 id="ShowPrime"></h3>
+
+                <script>
+                  function PrimeNum(){
+                       var str=document.getElementById("PrimeNumber").value;
+                       var i=0;
+                       var j=2;
+
+                       for (j; j<str; j++){
+                        if (str%j == 0) {
+                            i=j;
+                        }
+
+                      }
+                      if (i==0) {
+                        document.getElementById("ShowPrime").innerHTML=str +" "+"is a prime number";
+                      }
+
+                      else{
+                        document.getElementById("ShowPrime").innerHTML=str +" "+"is not a prime number";
+                      }
+                  }
+                </script>
+	        </div>
+	        
+	        <div class="col-sm-6">
+                <input type="text" class="InputBox" name="text" id="PallinDrome">
+                <button type="button" class="btn-custom" onclick="clckonce()"> PALINDROME</button>
+                <h3 id="Result"></h3>
+
+                <script>
+                function clckonce(){
+                    var str=document.getElementById("PallinDrome").value;
+                    var i=str.length;
+                    var rvrs="";
+
+
+                    for (var j=i; j>=0; j--){
+                        rvrs=rvrs+str.charAt(j);
+                       }
+
+
+                        if (str==rvrs) {
+                            document.getElementById("Result").innerHTML="Palindrome";
+                        }else {
+                            document.getElementById("Result").innerHTML="Not a Palindrome";
+                        }
+                } 
+                </script>
+	        </div>
+        </div>
+    </div>
+       
+       
+       
+        <script src="js/jquery-3.1.1.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
